@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fomo415 | SF Visual Zine</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --zine-black: #1a1a1a;
@@ -19,13 +19,15 @@
         }
 
         .zine-header {
-            font-family: 'UnifrakturMaguntia', serif;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
             font-size: 4rem;
             text-align: center;
             padding: 2rem 0;
             border-bottom: 4px solid var(--zine-black);
             margin-bottom: 2rem;
             text-transform: uppercase;
+            letter-spacing: -2px;
         }
 
         /* Mobile-First Feed Layout */
@@ -282,6 +284,11 @@
             if (filtered.length === 0) {
                 grid.innerHTML = '<div class="text-center p-5"><h3>No events found for this period.</h3><p>Try another filter!</p></div>';
             } else {
+                // Shuffle the filtered events for a random feed
+                for (let i = filtered.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+                }
                 renderEvents(filtered);
             }
         }
