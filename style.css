@@ -1,0 +1,126 @@
+:root {
+    --zine-black: #1a1a1a;
+    --zine-white: #fcfcfc;
+}
+
+body {
+    background-color: var(--zine-white);
+    font-family: 'Inter', sans-serif;
+    color: var(--zine-black);
+}
+
+.zine-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 4px solid var(--zine-black);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+/* Mobile-First Feed Layout */
+.zine-grid {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.event-card {
+    margin-bottom: 3rem;
+    position: relative;
+    background: white;
+    border: 2px solid var(--zine-black);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 15px 15px 0px var(--zine-black);
+}
+
+.event-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    border-bottom: 2px solid var(--zine-black);
+}
+
+.event-details {
+    padding: 1.5rem;
+    background: white;
+}
+
+.event-overlay {
+    display: none; /* Removed for feed style */
+}
+
+.badge-zine {
+    background: var(--zine-black);
+    color: var(--zine-white);
+    border-radius: 0;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: yellow;
+    color: black;
+    padding: 2px 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: 2px solid black;
+    transform: rotate(5deg);
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 0;
+    border: 4px solid var(--zine-black);
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--zine-black);
+    background: var(--zine-black);
+    color: white;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.zine-select {
+    max-width: 300px;
+    border: 3px solid var(--zine-black);
+    border-radius: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: yellow;
+    cursor: pointer;
+    text-align: center;
+}
+
+.zine-select:focus {
+    box-shadow: 8px 8px 0px var(--zine-black);
+    border-color: var(--zine-black);
+}
+
+.post-caption {
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+#loader {
+    text-align: center;
+    padding: 5rem;
+}
