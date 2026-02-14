@@ -1,9 +1,8 @@
 const TSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1ghG_EFqf6qmtiV3ZhtuK5h9dlb3JiqSyZRYqWhXaG2Hw2ardSrH1cTxAOxELM9fYGgej-t07clt8/pub?gid=2084077014&single=true&output=tsv';
 let allEvents = [];
 
-// Set "Today" based on the system date provided (Feb 7, 2026)
-// In a real app, this would be new Date()
-const TODAY = new Date(2026, 1, 7); // Feb is 1 in JS Date(year, monthIndex, day)
+// Use current system date
+const TODAY = new Date();
 
 async function init() {
     Papa.parse(TSV_URL, {
